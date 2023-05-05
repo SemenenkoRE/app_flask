@@ -1,0 +1,74 @@
+<!-- -->
+<!DOCTYPE html>
+<html lang="ru" xmlns="http://www.w3.org/1999/html">
+	<head>
+		<title>Работа с БД/title</title>
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@100;200;300;400&display=swap" rel="stylesheet">
+		<link type="text/css" rel="stylesheet" href="/static/css/style.css">
+		<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+	</head>
+	<body>
+	<header>
+		<div class="container">
+			<div class="header__inner">
+				<nav class="main__menu">
+					<ul>
+						<li><a href="/query">запросы к БД</a></li>
+						<li><a href="/insert">внесения в БД</a></li>
+					</ul>
+				</nav>
+				<div class="main__logo">
+					<p>черкизово</p>
+				</div>
+			</div>
+		</div>
+	</header>
+	<div class="#">
+		<div class="container">
+			<h1>
+				<span id="header_one">работа в базой</span> продаж
+			</h1>
+			<form action="/insert" method="POST" id="" enctype="multipart/form-data">
+				<div class="main__frame">
+					<div class="box__filling" id="date_sale">
+						<div data-width="120px" class="text__parameter">Дата продажи</div>
+						<div class="fill_block">
+							<div class="input__parameter left_field">
+								<div data-width="100px" data-border-radius="true">
+									<input type="date" data-width="98pr" class="value_input" name="date" />
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="box__filling" id="articul">
+						<div data-width="80px" class="text__parameter">Артикул</div>
+						<div class="fill_block">
+							<div class="input__parameter left_field">
+								<div data-width="140px" data-border-radius="true">
+									<input type="text" data-width="98pr" class="value_input" name="articul" />
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="box__filling" id="weight">
+						<div data-width="80px" class="text__parameter">Вес</div>
+						<div class="fill_block">
+							<div class="input__parameter left_field">
+								<div data-width="80px" data-border-radius="true">
+									<input type="text" data-width="98pr" class="value_input" name="weight" />
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="main__frame">
+					<button type="submit" class="button__result">Внести в БД</button>
+				</div>
+				<div class="response__btn not_active"></div>
+			</form>
+		</div>
+	</div>
+	</body>
+	<script src="/static/js/script_indicat_insert.js"></script>
+</html>
