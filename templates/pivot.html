@@ -1,0 +1,77 @@
+<!-- -->
+<!DOCTYPE html>
+<html lang="ru" xmlns="http://www.w3.org/1999/html">
+	<head>
+		<title>Работа с БД/title</title>
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@100;200;300;400&display=swap" rel="stylesheet">
+		<link type="text/css" rel="stylesheet" href="/static/css/style.css">
+		<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+	</head>
+	<body>
+	<header>
+		<div class="container">
+			<div class="header__inner">
+				<nav class="main__menu">
+					<ul>
+						<li><a href="/query">выгрузка продаж из БД</a></li>
+						<li><a href="/insert">внесения в БД</a></li>
+						<li><a href="/pivot">сводная таблица продаж</a></li>
+					</ul>
+				</nav>
+				<div class="main__logo">
+					<p>черкизово</p>
+				</div>
+			</div>
+		</div>
+	</header>
+	<div class="#">
+		<div class="container">
+			<h1>
+				<span id="header_one">выгрузка продаж из</span> БД
+			</h1>
+			<form action="/pivot" method="POST" id="" enctype="multipart/form-data">
+				<div class="main__frame">
+					<div class="box__filling" id="date_sale">
+						<div data-width="120px" class="text__parameter">Дата продажи</div>
+						<div class="fill_block">
+							<div class="input__parameter left_field_double">
+								<div data-width="100px" data-border-radius="true">
+									<input type="date" data-width="98pr" class="value_input" name="date_from" />
+								</div>
+							</div>
+							<div class="input__parameter right_field_double">
+								<div data-width="100px" data-border-radius="true">
+									<input type="date" data-width="98pr" class="value_input" name="date_until" />
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="box__filling" id="articul">
+						<div data-width="80px" class="text__parameter">Артикул</div>
+						<div class="fill_block">
+							<div class="input__parameter left_field">
+								<div data-width="140px" data-border-radius="true">
+									<input type="text" data-width="98pr" class="value_input" name="articul" />
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="not_active">
+					<div class="modes">
+						<input id="radio_site" type="radio" name="mode" value="site">
+						<input id="radio_exel" type="radio" name="mode" value="exel">
+					</div>
+				</div>
+				<div class="main__frame">
+					<button type="submit" class="button__result">Выгрузка в ексель</button>
+				</div>
+				<div class="response__btn not_active"></div>
+			</form>
+		</div>
+	</div>
+	</body>
+<!--	<script src="/static/js/script_select.js"></script>-->
+	<script src="/static/js/script_pivot_indicat.js"></script>
+</html>
