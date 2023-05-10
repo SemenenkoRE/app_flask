@@ -9,7 +9,7 @@ btnResult.addEventListener('click', function (event) {
     indicateMistakes()
 
     if (statusRed == true ||
-        (date_from.value == "" && date_until.value == "" && articul.value == "" && price_from.value == "" && price_until.value == "")) {
+        (date_from.value == "" && date_until.value == "" && articul.value == "" && weight_from.value == "" && weight_until.value == "")) {
 
         // отменяет событие отправки данных с формы
         event.preventDefault();
@@ -33,9 +33,9 @@ let date_until = document.querySelector('[name="date_until"]')
 // Артикул
 let articul = document.querySelector('[name="articul"]')
 
-// Стоимость
-let price_from = document.querySelector('[name="weight_from"]')
-let price_until = document.querySelector('[name="weight_until"]')
+// масса
+let weight_from = document.querySelector('[name="weight_from"]')
+let weight_until = document.querySelector('[name="weight_until"]')
 
 
 // ДОЛЖЕН НАВЕСИТЬ ДРУГУЮ ФУНКЦИЮ В КОТОРОЙ СОДЕРЖИТСЯ indicateMistakes + СНЯТИЕ ОГРАНИЯЧЕНИЯ С СОБЫТИЯ
@@ -43,8 +43,8 @@ document.addEventListener("click", indicateMistakes);
 date_from.addEventListener("click", indicateMistakes);
 date_until.addEventListener("click", indicateMistakes);
 articul.addEventListener("click", indicateMistakes);
-price_from.addEventListener("click", indicateMistakes);
-price_until.addEventListener("click", indicateMistakes);
+weight_from.addEventListener("click", indicateMistakes);
+weight_until.addEventListener("click", indicateMistakes);
 
 function indicateMistakes() {
 
@@ -54,8 +54,8 @@ function indicateMistakes() {
     testYear(date_until)
 
     testNumeric(articul)
-    testNumeric(price_from)
-    testNumeric(price_until)
+    testNumeric(weight_from)
+    testNumeric(weight_until)
 
 };
 
