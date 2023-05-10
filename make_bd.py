@@ -1,6 +1,10 @@
 import datetime
 
 class MakeBd:
+    
+    """ Объект для создания / перезаписи базы данных.
+    
+    Исходник с данными в папке files. """
 
     __connection = None
     __cursor = None
@@ -12,10 +16,12 @@ class MakeBd:
 
         """ """
 
-        name_user = 'sa'
-        name_server = 'localhost'
-        password = 'ert!@#ERT'
-        name_db = 'db_sales'
+        import bd_login_passw as d
+
+        name_user = d.name_user
+        name_server = d.name_server
+        password = d.password
+        name_db = d.name_db
 
         import pymssql
 
