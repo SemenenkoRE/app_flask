@@ -1,6 +1,8 @@
 
 class UnloadQuery:
 
+    """ Объект получает команду sql и выполняет выгрузку записей за период """
+
     __connection = None
     __cursor = None
     __log = ''
@@ -15,10 +17,12 @@ class UnloadQuery:
 
         """ """
 
-        name_user = 'sa'
-        name_server = 'localhost'
-        password = 'ert!@#ERT'
-        name_db = 'db_sales'
+        import bd_login_passw as d
+
+        name_user = d.name_user
+        name_server = d.name_server
+        password = d.password
+        name_db = d.name_db
 
         import pymssql
 
@@ -37,7 +41,7 @@ class UnloadQuery:
 
         from openpyxl import load_workbook
 
-        wb = load_workbook(self.set_directory() + '/files/base.xlsx')
+        wb = load_workbook(self.set_directory() + '/files/base1.xlsx')
 
         sheet = wb['unload_table']
 
