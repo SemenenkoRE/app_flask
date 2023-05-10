@@ -40,6 +40,39 @@ def select():
         return redirect(url_for('select'))
 
 
+@app.route("/pivot", methods=["POST", "GET"])
+def pivot():
+
+    """ Возвращает страницу для формирования выгрузки из БД """
+
+    if request.method == 'GET':
+
+        return render_template('pivot.html')
+
+    elif request.method == 'POST':
+
+        # Получить словарь с запросом
+        dict_query = request.form.to_dict()
+
+        print('dict_query --- ', dict_query)
+
+        # Сформировать команду запроса
+        from form_pivot import SelectQueryPivot
+        proc = SelectQueryPivot(dict_query)
+        sql_command = proc.get_query
+
+        # Выполнить запрос и сохранить файл
+        from do_pivot import UnloadPivot
+        UnloadPivot(sql_command)
+
+        # Выгружаем файл
+        path_file = UnloadPivot.set_directory()
+
+        return send_file(path_file + '/files/report2.xlsx', as_attachment=False)
+
+        return redirect(url_for('pivot'))
+
+
 @app.route("/insert", methods=["POST", "GET"])
 def insert():
 
